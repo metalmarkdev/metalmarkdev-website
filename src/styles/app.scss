@@ -1,0 +1,50 @@
+// @import "~bootstrap-sass";
+// @import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
+// $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+// @import "~bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
+// @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+// Bootstrap
+// $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+// @import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import './common';
+
+html, body, div, span, a, p, ul, li, h1, code, nav {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font: inherit;
+  text-decoration: inherit;
+  text-align: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+html {
+  height: 100%;
+}
+
+body.body-class {
+  @extend .noise;
+  height: 100%;
+  background-color: rgba(10,20,60,255);
+}
+
+.root {
+  font-family: 'hack';
+  font-weight: '300';
+  font-size: '16px';
+  letter-spacing: '0.025em';
+}
+
+.header{
+  text-align: center;
+
+  .title{
+    @include user-select(none);
+    font-size: 40px;
+    color: rgba(210,210,210,255);
+    justify-content: space-between;
+    cursor: default;
+  }
+}

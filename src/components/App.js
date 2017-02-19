@@ -3,6 +3,10 @@ import Interactive from 'react-interactive';
 import { Link } from 'react-router';
 import s from '../styles/app.style';
 
+import _ from 'lodash';
+
+require('../styles/app.scss');
+
 const propTypes = {
   children: PropTypes.element.isRequired,
   routes: PropTypes.array.isRequired,
@@ -35,34 +39,42 @@ function App({ children, routes }) {
     );
   }
 
-
   return (
-    <div style={s.root}>
-      <h1 style={s.title}>Single Page Apps for GitHub Pages</h1>
-      <Interactive
-        as="a"
-        href="https://github.com/rafrex/spa-github-pages"
-        style={s.repoLink}
-        {...s.link}
-      >https://github.com/rafrex/spa-github-pages</Interactive>
-      <nav style={s.mapMenu}>
-        {generateMapMenu()}
-      </nav>
-      {children}
-      <div style={s.creditLine}>
-        <Interactive
-          as="a"
-          href="http://www.rafaelpedicini.com"
-          interactiveChild
-          focus={{}}
-          touchActive={{}}
-          touchActiveTapOnly
-        >
-          Code and concept by <span {...s.childLink}>Rafael Pedicini</span>
-        </Interactive>
+    <div className='container-fluid root'>
+      <div className='header'>
+        <h1 className='title'>MetalMark</h1>
       </div>
+      {children}
     </div>
   );
+
+  // return (
+  //   <div style={s.root} className='noise'>
+  //     <h1 style={s.title}>Single Page Apps for GitHub Pages</h1>
+  //     <Interactive
+  //       as="a"
+  //       href="https://github.com/rafrex/spa-github-pages"
+  //       style={s.repoLink}
+  //       {...s.link}
+  //     >https://github.com/rafrex/spa-github-pages</Interactive>
+  //     <nav style={s.mapMenu}>
+  //       {generateMapMenu()}
+  //     </nav>
+  //     {children}
+  //     <div style={s.creditLine}>
+  //       <Interactive
+  //         as="a"
+  //         href="http://www.rafaelpedicini.com"
+  //         interactiveChild
+  //         focus={{}}
+  //         touchActive={{}}
+  //         touchActiveTapOnly
+  //       >
+  //         Code and concept by <span {...s.childLink}>Rafael Pedicini</span>
+  //       </Interactive>
+  //     </div>
+  //   </div>
+  // );
 }
 
 App.propTypes = propTypes;
